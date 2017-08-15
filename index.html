@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title> Neighborhood Application </title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="css/styles.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="searchandmarkedplaces">
+            <div class="search">
+               <input class="search-input" type="text" 
+                  placeholder="here is your results , you can filter them..." data-bind="textInput: filteredElement, event: {keyup: ListFilter}">
+               <img class="icon" src="img/search.ico">     
+            </div>
+            <div>
+               <ul data-bind="foreach:locations">
+                  <li>
+                     <a   data-bind= 'text:title, click: $root.showInfoWindow' href=''></a>
+                     <br><br><br>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div id="map" data-bind="initMap">
+      </div>
+      <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+      <script type="text/javascript" src="js/FavouritePlaces.js"></script>
+      <script type="text/javascript" src="js/mapstyles.js"></script>
+      <script type="text/javascript" src="js/App.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDNPIjvSU3jc98lT6Uw6_DJ9BDjP15A0us&v=3&callback=initMap" onerror="error()"></script>
+   </body>
+</html>
